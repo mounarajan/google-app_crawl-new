@@ -267,9 +267,9 @@ def extracctMainurls1(url,num):
 						extracctMainurls1(url,num)
 
 def get_data():
-	f2 = open('app_links1.txt','r')
+	f2 = open('app_new_run.txt','r')
 
-	nprocs = 500 # nprocs is the number of processes to run
+	nprocs = 1000 # nprocs is the number of processes to run
 	ParsePool = Pool(nprocs)
 	#ParsePool.map(btl_test,url)
 	ParsedURLS = ParsePool.map(deatilsExtract,f2)
@@ -342,7 +342,7 @@ def urlsDeatilsExtract(url):
 def deatilsExtract(url):
 
 	f3 = open('crawled_email1','a')
-	f4 = open('final_data.csv','at')
+	f4 = open('final_data_new.csv','at')
 	url = re.sub(r'(?mis)[\s\n]*','',url)
 	url = re.sub(r'\&','\&',url)
 	#url = re.sub(r'\?','\?',url)
@@ -413,7 +413,7 @@ def crawl_fb_again_again(url1,url,noi,cat,rating,dp,vi):
 	f3 = open('crawled_email1','a')
 	f4 = open('crawled_email_ugly','a')
 	f5 = open('facebook-crawled1_email_ids_report.json','a')
-	f6 = open('final_data.csv','at')
+	f6 = open('final_data_new.csv','at')
 	if re.search(r'^htt',url1):
 		lin = re.sub(r'(?mis)[\s\n]*','',url1)
 		lin = re.sub(r'\&','\&',lin)
@@ -625,7 +625,7 @@ def link_again(url,sleep,main_url,noi,cat,rating,dp,vi):
 		f4 = open('crawled_email_ugly','a')
 		f5 = open('facebook-crawled_email_ids_report.json','a')
 		f6 = open('contact-links','a')
-		f7 = open('final_data.csv','at')
+		f7 = open('final_data_new.csv','at')
 											#f4.write("{\""+lin+"\" => \""+email+"\"}"+"\n")
 
 		if re.search(r'^\w',url):
@@ -707,9 +707,9 @@ def dedupUrls2():
 			rmdup.writelines(set(uniqlines))
 
 def dedupUrls3():
-	with open('final_data.csv') as result:
+	with open('final_data_new.csv') as result:
 		uniqlines = set(result.readlines())
-		with open('final_data1.csv', 'w') as rmdup:
+		with open('final_data_new1.csv', 'w') as rmdup:
 			rmdup.writelines(set(uniqlines))
 
 
@@ -727,8 +727,8 @@ def dedupUrls3():
 #dedupUrlsapp()
 #get_urls1()
 #dedupUrls2()
-dedupUrlsapp()
-#get_data()
+#dedupUrlsapp()
+get_data()
 #dedupUrls3()
 
 	
