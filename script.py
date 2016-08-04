@@ -716,19 +716,19 @@ def dedupUrls3():
 
 
 
-#extractUrls("https://play.google.com/store/apps")
-#dedupUrls()
+extractUrls("https://play.google.com/store/apps")
+dedupUrls()
 
-#assigneCategory()
-#dedupUrls1()
-#extracctMainurls()
+assigneCategory()
+dedupUrls1()
+extracctMainurls()
 #deatilsExtract("https://play.google.com/store/apps/details?id=com.tocaboca.tocakitchen2")
 #urlsDeatilsExtract("https://play.google.com/store/apps/details?id=com.issess.flashplayerpro")
+dedupUrlsapp()
+get_urls1()
+dedupUrls2()
 #dedupUrlsapp()
-#get_urls1()
-#dedupUrls2()
-#dedupUrlsapp()
-get_data()
+#get_data()
 #dedupUrls3()
 
 	
